@@ -1,8 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
 
 public class RegisterTest {
 
@@ -14,14 +11,12 @@ public class RegisterTest {
 //   Apelati metoda aceasta in metoda main din clasa pentru a rula testul.
 
     public void registerWithValidDetails() {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("http://testfasttrackit.info/selenium-test/");
-
-        String accountSelector = "#header > div > div.skip-links > div > a";
-
+            InvokeBrowser invoke = new InvokeBrowser();
+            WebDriver driver = invoke.invokeBrowser("http://testfasttrackit.info/selenium-test/");
         try {
+
+            String accountSelector = "#header > div > div.skip-links > div > a";
+
             driver.findElement(By.cssSelector(accountSelector)).click();
             driver.findElement(By.linkText("Register")).click();
             driver.findElement(By.id("firstname")).sendKeys("Emma");

@@ -1,7 +1,3 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -17,7 +13,7 @@ public class Main {
     }
 
     public static void loginFunctionality() {
-        Login login = new Login();
+        LoginTest login = new LoginTest();
         login.loginWithIncorrectCredentials();
         login.loginWithCorrectCredentials();
     }
