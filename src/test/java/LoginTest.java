@@ -22,8 +22,11 @@ public class LoginTest {
         driver.findElement(By.cssSelector("div.account-cart-wrapper > a")).click();
         driver.findElement(By.cssSelector("a[title='Log In']")).click();;
         driver.findElement(By.cssSelector("#email")).sendKeys("someoneelse@gmail.com");
-        driver.findElement(By.cssSelector("#pass")).sendKeys("123");
+        driver.findElement(By.cssSelector("#pass")).sendKeys("123dfgdf");
         driver.findElement(By.cssSelector("#send2")).click();
+
+        String helloText = driver.findElement(By.cssSelector(".error-msg span")).getText();
+        Assert.assertEquals("Invalid login or password.", helloText);
     }
 
 //   11. Adăugați în clasa LoginTest un test în care să automatizați pașii necesari pentru logarea cu succes a unui utilizator.
